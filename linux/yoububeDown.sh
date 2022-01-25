@@ -79,7 +79,7 @@ do
 done
 
 echo 正在下载，请稍后...
-yt-dlp ${url} -f${dpi}+${audioFormat}
+./yt-dlp ${url} -f${dpi}+${audioFormat}
 read -p 下载完毕，按任意键退出!
 
 
