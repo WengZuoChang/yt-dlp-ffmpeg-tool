@@ -31,6 +31,24 @@ yt-dlp官方地址：https://github.com/yt-dlp/yt-dlp
 
 
 
+
+
+#### 更新及安装组件
+
+```shell
+apt update -y          # Debian/Ubuntu 命令
+apt install -y curl    #Debian/Ubuntu 命令
+apt install -y socat    #Debian/Ubuntu 命令
+```
+
+```shell
+yum update -y          #CentOS 命令
+yum install -y curl    #CentOS 命令
+yum install -y socat    #CentOS 命令
+```
+
+
+
 ## Window版本
 
 1. 双击运行下载助手，输入YouTube油管视频地址，查询视频支持的下载格式

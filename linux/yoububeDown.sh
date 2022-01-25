@@ -5,8 +5,8 @@
 if ! command -v yt-dlp >/dev/null 2>&1;
 then
     echo "正在安装yt-dl..."
-    sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
-    sudo chmod a+rx ./yt-dlp
+    wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+    chmod a+rx ./yt-dlp
 fi
 
 # 安装Ffmpeg
