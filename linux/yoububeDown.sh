@@ -2,11 +2,11 @@
 
 
   # 安装yt-dlp
-if ! command -v yt-dlp >/dev/null 2>&1;
+if ! command -e yt-dlp >/dev/null 2>&1;
 then
     echo "正在安装yt-dl..."
     wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
-    chmod a+rx ./yt-dlp
+    sudo chmod a+rx ./yt-dlp
 fi
 
 # 安装Ffmpeg
@@ -46,7 +46,6 @@ echo ================== 一键下载YouTube油管视频 ===================
 echo ============ 码匠铺 https://www.wengzuochang.com ============
 echo =============================================================
 
-echo "编辑yt-dlp.conf文件设置视频地址"
 # 可以进行删除 stty erase '^H'
 stty erase '^H'
 while true
