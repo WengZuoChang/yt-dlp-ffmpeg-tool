@@ -2,7 +2,7 @@
 
 
   # 安装yt-dlp
-if ! command -e yt-dlp >/dev/null 2>&1;
+if [[ ! -e yt-dlp ]];
 then
     echo "正在安装yt-dl..."
     wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
