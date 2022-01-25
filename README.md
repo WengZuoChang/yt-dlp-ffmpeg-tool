@@ -35,12 +35,12 @@ yt-dlp官方地址：https://github.com/yt-dlp/yt-dlp
 
 1. 双击运行下载助手，输入YouTube油管视频地址，查询视频支持的下载格式
 
-![](\img\1.jpg)
+![](https://github.com/WengZuoChang/yt-dlp-ffmpeg-tool/blob/main/img/1.jpg)
 
 2. 根据列出的视频信息列表，选择输入video only 行视频分辨率ID，例如：137
 3. 根据列出的视频信息列表，选择输入audio only 行音频 ID，例如：251
 
-![](\img\2.jpg)
+![](https://github.com/WengZuoChang/yt-dlp-ffmpeg-tool/blob/main/img/2.jpg)
 
 4. 最后等待下载完成。
 
