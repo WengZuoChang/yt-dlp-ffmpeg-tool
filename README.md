@@ -67,7 +67,7 @@ yum install -y socat    #CentOS 命令
 1. 执行命令
 
 ~~~shell
-bash <(curl -L -s https://raw.githubusercontent.com/WengZuoChang/yt-dlp-ffmpeg-tool/main/linux/yoububeDown.sh)
+wget https://raw.githubusercontent.com/WengZuoChang/yt-dlp-ffmpeg-tool/main/linux/yoububeDown.sh && chmod +x yoububeDown.sh && ./yoububeDown.sh
 ~~~
 
 ![](https://github.com/WengZuoChang/yt-dlp-ffmpeg-tool/blob/main/img/3.jpg)
