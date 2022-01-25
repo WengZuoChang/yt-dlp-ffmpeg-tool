@@ -70,7 +70,11 @@ yum install -y socat    #CentOS 命令
 bash <(curl -L -s https://raw.githubusercontent.com/WengZuoChang/yt-dlp-ffmpeg-tool/main/linux/yoububeDown.sh)
 ~~~
 
+![](https://github.com/WengZuoChang/yt-dlp-ffmpeg-tool/blob/main/img/3.jpg)
 
+2. 根据列出的视频信息列表，选择输入video only 行视频分辨率ID，例如：137
+3. 根据列出的视频信息列表，选择输入audio only 行音频 ID，例如：251
 
+![](https://github.com/WengZuoChang/yt-dlp-ffmpeg-tool/blob/main/img/4.jpg)
 
-
+最后等待下载完成。
