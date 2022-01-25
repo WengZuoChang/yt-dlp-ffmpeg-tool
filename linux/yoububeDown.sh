@@ -5,7 +5,7 @@
 if [[ ! -e yt-dlp ]];
 then
     echo "正在安装yt-dl..."
-    wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+    sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
     sudo chmod a+rx ./yt-dlp
 fi
 
@@ -58,7 +58,7 @@ do
 done
 
 echo "正在查询支持下载的格式列表..."
-yt-dlp -F $url
+./yt-dlp -F $url
 echo "注意：audio only的行代表音频，video only的行代表视频"
 while true
 do
