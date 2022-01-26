@@ -1,29 +1,29 @@
 #!/bin/bash
 
 
-  # å®‰è£…yt-dlp
+# °²×°yt-dlp
 if [[ ! -e yt-dlp ]];
 then
-    echo "æ­£åœ¨å®‰è£…yt-dl..."
+    echo "ÕıÔÚ°²×°yt-dl..."
     sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
     sudo chmod a+rx ./yt-dlp
 fi
 
-# å®‰è£…Ffmpeg
+# °²×°Ffmpeg
 if [[ ! -e ffmpeg ]];
 then
-    # ä¸‹è½½Ffmpeg
+    # ÏÂÔØFfmpeg
     wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
-    # è§£å‹Ffmpeg
+    # ½âÑ¹Ffmpeg
     xz -d ffmpeg-git-amd64-static.tar.xz
     tar -xvf ffmpeg-git-amd64-static.tar
-    # åˆ é™¤å‹ç¼©åŒ…
+    # É¾³ıÑ¹Ëõ°ü
     rm -rf ffmpeg-git-amd64-static.tar
-    # é‡å‘½å
+    # ÖØÃüÃû
     mv ffmpeg-git-20220108-amd64-static ffmpeg
 fi
 
-# æ·»åŠ é…ç½®æ–‡ä»¶
+# Ìí¼ÓÅäÖÃÎÄ¼ş
 if [[ ! -e yt-dlp.conf ]]; 
 then
     touch yt-dlp.conf
@@ -37,32 +37,32 @@ then
     echo '--embed-thumbnail' >> yt-dlp.conf
     echo '--convert-subs srt' >> yt-dlp.conf
     echo "--ffmpeg-location `pwd`/ffmpeg/ffmpeg" >> yt-dlp.conf
-    echo "åˆ›å»ºå®Œæˆ"
+    echo "´´½¨Íê³É"
 fi
 
 echo ============================================================
-echo ====================== yt-dlp ä¸‹è½½åŠ©æ‰‹ ======================
-echo ================== ä¸€é”®ä¸‹è½½YouTubeæ²¹ç®¡è§†é¢‘ ===================
-echo ============ ç åŒ é“º https://www.wengzuochang.com ============
+echo ====================== yt-dlp ÏÂÔØÖúÊÖ ======================
+echo ================== Ò»¼üÏÂÔØYouTubeÓÍ¹ÜÊÓÆµ ===================
+echo ============ Âë½³ÆÌ https://www.wengzuochang.com ============
 echo =============================================================
 
-# å¯ä»¥è¿›è¡Œåˆ é™¤ stty erase '^H'
+# ¿ÉÒÔ½øĞĞÉ¾³ı stty erase '^H'
 stty erase '^H'
 while true
 do
-    read -p "è¯·è¾“å…¥è§†é¢‘åœ°å€ï¼š" url
+    read -p "ÇëÊäÈëÊÓÆµµØÖ·£º" url
     if [ $url ]; 
     then
         break
     fi
 done
 
-echo "æ­£åœ¨æŸ¥è¯¢æ”¯æŒä¸‹è½½çš„æ ¼å¼åˆ—è¡¨..."
+echo "ÕıÔÚ²éÑ¯Ö§³ÖÏÂÔØµÄ¸ñÊ½ÁĞ±í..."
 ./yt-dlp -F $url
-echo "æ³¨æ„ï¼šaudio onlyçš„è¡Œä»£è¡¨éŸ³é¢‘ï¼Œvideo onlyçš„è¡Œä»£è¡¨è§†é¢‘"
+echo "×¢Òâ£ºaudio onlyµÄĞĞ´ú±íÒôÆµ£¬video onlyµÄĞĞ´ú±íÊÓÆµ"
 while true
 do
-    read -p "è¯·è¾“å…¥ä¸‹è½½è§†é¢‘çš„åˆ†è¾¨ç‡(åªèƒ½é€‰video only)ï¼š" dpi
+    read -p "ÇëÊäÈëÏÂÔØÊÓÆµµÄ·Ö±æÂÊ(Ö»ÄÜÑ¡video only)£º" dpi
     if [ $dpi ]; 
     then
         break
@@ -71,15 +71,27 @@ done
 
 while true
 do
-    read -p "è¯·è¾“å…¥ä¸‹è½½éŸ³é¢‘çš„æ ¼(åªèƒ½é€‰audio only)ï¼š" audioFormat
+    read -p "ÇëÊäÈëÏÂÔØÒôÆµµÄ¸ñ(Ö»ÄÜÑ¡audio only)£º" audioFormat
     if [ $audioFormat ]; 
     then
         break
     fi
 done
 
-echo "æ­£åœ¨ä¸‹è½½ï¼Œè¯·ç¨å..."
-./yt-dlp $url -f$dpi+$audioFormat
-read -p ä¸‹è½½å®Œæ¯•ï¼ŒæŒ‰ä»»æ„é”®é€€å‡º!
-
+while true
+do
+    read -p "ÊÇ·ñ½øÈëºóÌ¨ÏÂÔØ£¿(y»òn,Ä¬ÈÏÎªn)£º" backDown
+    if [[ $backDown = "" || $backDown = 'n' ]];
+    then
+        echo "ÕıÔÚÏÂÔØ£¬ÇëÉÔºó..."
+        ./yt-dlp $url -f$dpi+$audioFormat
+        read -p "ÏÂÔØÍê±Ï£¬°´ÈÎÒâ¼üÍË³ö!"
+        break
+    elif [[ $backDown = 'y' ]];
+    then
+        nohup ./yt-dlp $url -f$dpi+$audioFormat >> info.log 2>&1 &
+        echo "ÒÑ½øÈëºóÌ¨ÏÂÔØ!"
+        break
+    fi
+done
 
