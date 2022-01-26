@@ -28,7 +28,7 @@ if [[ ! -e yt-dlp.conf ]];
 then
     touch yt-dlp.conf
     echo '## Download directory' >> yt-dlp.conf
-    echo '--output ~/video/%(uploader)s/%(title)s-%(resolution)s.%(ext)s' >> yt-dlp.conf
+    echo '--output ./video/%(uploader)s/%(title)s-%(resolution)s.%(ext)s' >> yt-dlp.conf
     echo '--console-title --progress-template "%(uploader)s/download-title:%(info.id)s-%(progress.eta)s"' >> yt-dlp.conf
     echo '## Video Format Options'  >> yt-dlp.conf
     echo '--merge-output-format mp4' >> yt-dlp.conf
