@@ -78,21 +78,8 @@ do
     fi
 done
 
-while true
-do
-    read -p "是否进入后台下载？(y或n,默认为n)：" backDown
-    if [[ $backDown = "" || $backDown = 'n' ]];
-    then
-        echo "正在下载，请稍后..."
-        ./yt-dlp $url -f$dpi+$audioFormat
-        read -p "下载完毕，按任意键退出!"
-        break
-    elif [[ $backDown = 'y' ]];
-    then
-        nohup ./yt-dlp $url -f$dpi+$audioFormat >> info.log 2>&1 &
-        echo "已进入后台下载!"
-        break
-    fi
-done
+echo "正在下载，请稍后..."
+./yt-dlp $url -f$dpi+$audioFormat
+read -p 下载完毕，按任意键退出!
 
 
