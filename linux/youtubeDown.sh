@@ -1,11 +1,19 @@
 #!/bin/bash
 
+if [[ ! -e yt-dlp-ffmpeg-tool ]];
+then
+   mkdir yt-dlp-ffmpeg-tool
+   cd yt-dlp-ffmpeg-tool
+else
+   cd yt-dlp-ffmpeg-tool
+fi
 
 # 安装yt-dlp
 if [[ ! -e yt-dlp ]];
 then
     echo "正在安装yt-dl..."
-    sudo wget https://github.com/yt-dlp/yt-dlp/releases/latest/download/yt-dlp
+    # wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
+    wget https://johnvansickle.com/ffmpeg/builds/ffmpeg-git-amd64-static.tar.xz
     sudo chmod a+rx ./yt-dlp
 fi
 
@@ -20,7 +28,7 @@ then
     # 删除压缩包
     rm -rf ffmpeg-git-amd64-static.tar
     # 重命名
-    mv ffmpeg-git-20220108-amd64-static ffmpeg
+    mv ffmpeg-git-20220722-amd64-static ffmpeg
 fi
 
 # 添加配置文件
